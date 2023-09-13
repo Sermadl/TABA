@@ -13,7 +13,7 @@ int main(int argc, char *argv[]){
 		exit(-1);
 	}
 	fd_origin = open(argv[1], O_RDONLY);
-	fd_dest = open(argv[2], O_RDWR | O_CREAT | O_EXCL, 0664);
+	fd_dest = open(argv[2], O_RDWR | O_CREAT | O_SYNC |  O_EXCL, 0664);
 	if(fd_origin < 0 || fd_dest < 0){
 		perror("fd open error\n");
 	}
